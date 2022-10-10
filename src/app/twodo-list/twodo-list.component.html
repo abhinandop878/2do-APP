@@ -15,7 +15,12 @@
                   <tr *ngFor="let i of todoData">
                     <td>{{i.id}}</td>
                     <td>{{i.title}}</td>
-                    <td>{{i.completed}}</td>
+                    <td *ngIf="i.completed"><div class="alert alert-success" role="alert">
+                        Completed
+                      </div></td>
+                      <td *ngIf="! i.completed"><div class="alert alert-danger" role="alert">
+                        Not Completed
+                      </div></td>
                   </tr>
                 </tbody>
               </table>
